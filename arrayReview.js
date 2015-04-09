@@ -15,12 +15,23 @@ var evenArray = [1,2,3,6,22,98,45,23,22,12];
 
   //code here
 
-
+var funk = function(ar) {
+	for (var i = ar.length - 1; i >= 0; i--) {
+		if (ar[i] % 2 !== 0) {
+			ar[i].splice(i, 1)
+		}
+	};
+}
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
 
 
 
-//below you're given a function that will return a random number between 0 and 30 and an array full or numbers 'randomArray'. Your job is to write a function that will get a random number, then loop through the array to see if that random number is in the array. If it is, alert true, if it's not, alert false
+//below
+//
+// you're given a function that will return a random number between 0 and 30 and an array
+// full or numbers 'randomArray'. Your job is to write a function that will get a random number, 
+//then loop through the array to see if that random number is in the array. 
+//If it is, alert true, if it's not, alert false
 var getRandomArbitrary = function() {
   return Math.floor(Math.random() * (30 - 0) + 0);
 }
@@ -36,9 +47,15 @@ var randomArray = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
 //Create a copy of first and save it into second. Then, add 6 and 7 to the end of second. When you run this, first should be just [1,2,3,4,5] and second will be [1,2,3,4,5,6,7] if you created your copy correctly.
 var first = [1,2,3,4,5];
 var second;
+ 
+
+
 
   //code here
 
+ var second = first.slice(0, 5)
+ second.push(6)
+ second.push("seven");
 alert(first) //[1,2,3,4,5];
 alert(second) //[1,2,3,4,5,6,7];
 
@@ -63,6 +80,18 @@ var myPoem = 'What is a jQuery but a misunderstood object?'
 //What is a jQuery but a misunderstood object? --> What Is A JQuery But A Misunderstood Object?
 
   //code here
+String.prototype.cap = function() {
+	return this.charAt(0).toUpperCase() + this.slice(1);
+}
+  var capitalize = function(myPoem) {
+  	var iable = [];
+  	var victorAlphaRomeo = myPoem.split( " ");
+  	for (var i = 0; i < victorAlphaRomeo.length; i++) {
+  		iable = victorAlphaRomeo[i].cap().push()
+  	};
+  	alert(iable);
+  	};
+  	
 
 
 
@@ -72,3 +101,9 @@ var myPoem = 'What is a jQuery but a misunderstood object?'
 
 var theOdyssey = "function expression or function declaration? Tis an obvious choice";
 //Write a function called vowelCounter that takes in a string (theOdyssey) and returns how many vowels are in that string.
+
+
+
+
+	theOdyssey.match(/[aeiou]/gi).length
+	
